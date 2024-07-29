@@ -1,0 +1,416 @@
+print("          ___________________")
+import socket
+#função que define o saldo dos legcoins
+legcoins=200
+def atualizar_legcoins(saldo, valor, operacao="+"):
+    if operacao == "+":
+        novo_saldo = saldo + valor
+    else:
+        novo_saldo = saldo - valor
+    if novo_saldo < 0:
+        print("Saldo insuficiente!")
+        return saldo
+    return novo_saldo
+
+con1=1
+con2=1
+#logo inicial do sistema leg os
+print("                 \033[1;36;49mleg OS\033[0;39;49m    ")
+print("          ___________________")
+print("      seu novo sistema operacional")
+print("                                        ")
+print("                                        ")
+print("                                        ")
+print("                                        ")
+input("press enter")
+print("                                        ")
+print("                                        ")
+print("                                        ")
+print("                                        ")
+#registro do usuário 
+print("vamos fazer seu cadastro ")
+usuário=input("digite seu nome:")
+idade=(input("digite sua idade:"))
+senha=(input("digite sua senha:"))
+cadas=input("deseja salvar o cadastro sim ou não:")
+print("                                        ")
+print("                                        ")
+print("                                        ")
+print("                                        ")
+print("________________________________________")
+while con1 <= 2:
+  print("                                        ")
+  print("                                        ")
+  print("                                        ")
+  print("                                        ")
+  print("________________________________________")
+  #funções principais do sistema 
+  print("1-configurações")
+  print("2-conta")
+  print("\033[1;34;49m3-play apps\033[0;39;49m")
+  print("4-relogio")
+  print("5-calculadora")
+  print("\033[1;31;49m6-sair\033[0;39;49m")
+  print("________________________________________")
+  print("                                        ")
+  print("                                        ")
+  print("                                        ")
+  num=int(input("digite o número do lugar que você quer entrar:"))
+  if num == 1:
+      while con2<=2:
+        print("                                        ")
+        print("                                        ")
+        print("                                        ")
+        print("________________________________________")
+        print("            \033[1;36;49mconfigurações.\033[0;39;49m              ")
+        print("                                        ")
+        print("                                        ")
+        print("\033[1;33;49m1-legcoins\033[0;39;49m ")
+        print("2-informações do sistema ")
+        print("\033[1;33;49m3-resgatar código\033[0;39;49m")
+        print("4-codigos")
+        print("5-sair")
+        confic1=int(input("digite o número do lugar que você quer entrar:"))
+        if confic1==5:
+          break
+        elif confic1==4:
+            print ("/server te leva a um servidor ")
+            print("credits te mostra os créditos e criadores")
+        elif confic1==1:
+          print("                                        ")
+          print("                                        ")
+          print("                                        ")
+          print("________________________________________")
+          print("              \033[1;36;49mlegcoins.\033[0;39;49m              ") 
+          print("você tem ")
+          print("",legcoins)
+          print("legcoins")
+        elif confic1==2:
+          print("                                        ")
+          print("                                        ")
+          print("                                        ")
+          print("________________________________________")
+          print("         \033[1;36;49minformações do sistema\033[0;39;49m              ") 
+          print("                                        ")
+          print("versão do sistema \033[1;36;49mleg OS\033[0;39;49m:alpha 1.2")
+          print("                                        ")
+        elif confic1==3:
+          print("                                        ")
+          print("                                        ")
+          códigocom=input("digite seu código:")
+          if códigocom =="credits":
+              print("Pedro Henrique/\033[1;34;49mleg\033[0;39;49mend")
+              print("programador e desenvolvedor chefe")  
+          elif  códigocom=="money":
+              print("você ganhou 10000 legcoins ")
+              legcoins = atualizar_legcoins(legcoins, 10000, "+")
+              print(f"Seu novo saldo é: {legcoins} legcoins")
+          elif  códigocom=="/server":
+              sercod=1
+              while sercod<=2:
+                print("                                        ")
+                print("                                        ")
+                print("                                        ")
+                print("1-servidor de mensagens ")
+                print("2-servidor de devs")
+                print("3-servidor de influencers")
+                print("4-sair")
+                servernum=int(input("digite o número do lugar que você quer entrar:"))
+                if servernum==1:
+                  
+                  porta = 8000
+
+
+                  sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+
+                  try:
+                     sock.connect(('', porta))
+                  except ConnectionRefusedError:
+                     print("Falha ao conectar ao servidor")
+                     exit()
+
+
+                     msg = input("Digite sua mensagem: ")
+                     sock.send(msg.encode('utf-8'))
+
+
+                     data = sock.recv(1024)
+                  if not data:
+                    print("Servidor desconectado")
+                    exit()
+
+                    print(f"Resposta do servidor: {data.decode('utf-8')}")
+
+
+                    sock.close()
+
+                elif servernum==4:
+                   break  
+          elif códigocom=="teste dev":
+             ianum=1 
+             print("                                        ")
+             print("                                        ")
+             print("                                        ")
+             print("________________________________________")
+             print("                  \033[1;36;49mIA\033[0;39;49m             ") 
+             print("                                        ")
+             print("                                        ")
+             print("                                        ") 
+             while ianum<=2: 
+               ia1=input("IA: digite algo ou digite sair:")
+               print("                                        ")
+               print("                                        ")
+               print("ótima informação ")
+               if ia1=="sair":
+                 break
+        
+  elif num==5:
+      print("                                        ")
+      print("                                        ")
+      print("                                        ")
+      print("")
+      print("              \033[1;36;49mcalculadora\033[0;39;49m             ") 
+      print("                                        ")
+      print("                                        ")
+      n1=int(input('digite um número'))
+      n2=int(input('digite outro número'))
+      s=n1+n2
+      d=n1/n2
+      sub=n1-n2
+      mul=n1*n2
+      print(".{} - {} = {}".format( n1, n2, sub))
+      print("                                        ")
+      print(".{} + {} = {}".format( n1, n2, s))
+      print("                                        ")
+      print(".{} ÷ {} = {}".format( n1, n2, d))
+      print("                                        ")
+      print(".{} × {} = {}".format( n1, n2, mul))
+      print("                                        ")
+  elif num==4:   
+      print("                                        ")
+      print("                                        ")
+      print("                                        ")
+      print("________________________________________")
+      print("                \033[1;36;49mrelogio.\033[0;39;49m             ") 
+      print("                                        ")
+      import time
+ 
+      t = time.localtime(time.time())
+      localtime = time.asctime(t)
+      str = "data,hora:" + time.asctime(t)
+ 
+      print(str)
+  elif num==3:   
+      
+      print("                                        ")
+      print("                                        ")
+      print("                                        ")
+      print("________________________________________")
+      print("                \033[1;36;49mplay apps.\033[0;39;49m             ")  
+      print("________________________________________")
+      print("            sua loja digital")
+      lojacon=1
+      while lojacon <=2:
+         print("1-atualizações")
+         print("2-apps")
+         print("3-jogos")
+         print("4-assinaturas")
+         print("5-mais legcoins")
+         print("6-sair")
+         loja1=int(input("digite o número do lugar que você quer entrar:"))
+         if loja1==6:
+           break
+         elif loja1==5:
+           print("                                        ")
+           print("                                        ")
+           legper=int(input("quanto é 50×9:"))    
+           if legper==450:
+               print("                                        ")
+               print("                                        ")
+               print("você ganhou 500 legcoins")
+               print("                                        ")
+               print("                                        ")
+               legcoins = atualizar_legcoins(legcoins, 500, "+")
+               print(f"Seu novo saldo é: {legcoins} legcoins")
+           else:
+               print("                                        ")
+               print("                                        ")
+               print("errou e perdeu 100 legcoins")
+               print("                                        ")
+               print("                                        ")
+               legcoins = atualizar_legcoins(legcoins, 100, "")
+               print(f"Seu novo saldo é: {legcoins} legcoins")
+         elif loja1==1:
+           print("                                        ")
+           print("                                        ")
+           print("1-atualizações dos aplicativos")
+           print("2-atualização do play apps")
+           print ("3-atualização do sistema leg OS")
+           loja2=int(input("digite o número do lugar que você quer entrar:"))
+           if loja2==1:
+            print("                                        ")
+            print("                                        ")
+            print("nenhum atualização encontrada")
+           elif loja2==2:
+             print("                                        ")
+             print("                                        ")
+             print("nenhum atualização encontrada")
+           elif loja2==3:       
+             print("                                        ")
+             print("                                        ")
+             print("nenhum atualização do sistema encontrada")
+           else :
+             print("                                        ")
+             print("                                        ")
+             print("desculpe ocorreu um erro")
+         elif loja1==2:  
+             apps1=1
+             while apps1<=2: 
+               print("                                        ")
+               print("                                        ")
+               print ("1-hot space")
+               print("2-sair")
+               apps2=int(input("digite o número do lugar que você quer entrar:"))
+               if apps2==2:
+                 break
+               elif apps2==1:  
+                 print("                                        ")
+                 print("                                        ")
+                 print ("hot space")
+                 print("uma rede social exclusiva do leg OS ")
+                 print("                                        ")
+                 hotdow=input("instalar hot space (s/n)")
+                 #colocar uma função para comprar o hot space por 300 legcoins na versão 1.3
+                 if hotdow=="s":
+                     print("                                        ")
+                     print("                                        ")
+                     print("instalando...")
+                     print("                                        ")
+                     print("                                        ")
+                     print("abrindo...")
+                     print("                                        ")
+                     print("                                        ")
+                     print("                                        ")
+                     print("                                        ")
+                     print("               \033[1;34;49mhot space\033[0;39;49m    ")
+                     nhot1=1
+                     print("         _____________________")
+                     print("         sua nova rede social ")
+                     print("                                        ")
+                     print("                                        ")
+                     print("                                        ")
+                     print("                                        ")
+                     print("vamos te cadastrar")
+                     print("                                        ")
+                     hotnome=input("digite seu nome:")
+                     hotNick=input("digite seu Nick:")
+                     hotsenha=input("digite sua senha:")
+                     #hotid=input("digite o id do seu leg OS:") usar quando tiver o import randon para o id
+                     while nhot1<=2:
+                         print("                                        ")
+                         print("                                        ")
+                         print("                                        ")
+                         print("                                        ")
+                         print("1-videos")
+                         print("2-mensagens")
+                         print("3-conta")
+                         print("4-loja hot")
+                         print("5-servidores")
+                         print("6-sair")
+                         perhot=int(input("digite o número do local que você quer entrar:"))
+                         if perhot==6:
+                           break
+                         elif perhot==1:
+                           print("ainda não temos vídeos")
+                         elif perhot==2:
+                           print("você não tem novas mensagens ")
+                         elif perhot==5:  
+                           print("procurando servidor")
+                           print(".               ")
+                           print(".               ")
+                           
+
+                           HOST = '127.0.0.1'  # Endereço IP do servidor
+                           PORT = 65432        # Porta do servidor
+
+                           with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                             s.connect((HOST,PORT))
+                           while True:
+                            msg = input("Você: ")
+                            s.sendall(msg.encode())
+                            data = s.recv(1024)
+                            if not data:
+                             break
+                            print(data.decode())
+                 elif hotdow=="n":
+                     print("saindo")
+                     print("a compra não foi realizada")
+                     print("                                        ")
+                     print("                                        ")
+                 else:
+                     print("ocorreu um erro")   
+                     print("                                        ")
+                     print("                                        ")
+                     
+                
+         elif loja1==3:   
+             print ("ainda não temos jogos disponíveis ")    
+         elif loja1==3:   
+             print ("ainda não temos assinaturas disponíveis ")    
+  
+  elif num==2:
+      print("                                        ")
+      print("                                        ")
+      print("                                        ")
+      print("________________________________________")
+      print("                \033[1;36;49msua conta\033[0;39;49m             ") 
+      print("1-nome do usuário:"+usuário)
+      print("2-idade do usuário:"+idade)
+      print("3-senha:"+senha) 
+      print("4-sair")   
+      print("                                        ")
+      print("                                        ")
+      conta1=int(input("digite o número da informação que deseja mudar ou saia:"))
+      if conta1==1:
+        usuário=input("digite seu novo nome:")
+      elif conta1==2:  
+        idade=(input("digite sua idade novamente:"))
+      elif conta1==3:  
+        senhates=(input("digite sua senha atual:"))
+        if senhates==senha:
+            senha=(input("digite sua senha nova:"))
+        else:
+            print("\033[1;32;49mdesculpa a senha está errada\033[0;39;49m")
+      elif conta1==4:
+            print("                                        ")
+            print("                                        ") 
+            print("saindo ") 
+            print("                                        ")
+            print("                                        ") 
+      else:  
+          print("                                        ")
+          print("                                        ") 
+          print("ocorreu um erro") 
+          print("                                        ")
+          print("                                         ")  
+  elif num==6:
+      break
+  else :
+      print("                                        ")
+      print("                                        ")
+      print("                                        ")
+      print("________________________________________")
+      print("\033[1;32;49mdesculpa ouve um erro\033[0;39;49m")
+  def atualizar_legcoins(saldo, valor, operacao="+"):
+    if operacao == "+":
+        novo_saldo = saldo + valor
+    else:
+        novo_saldo = saldo - valor
+    if novo_saldo < 0:
+        print("Saldo insuficiente!")
+        return saldo
+    return novo_saldo
+legcoins = atualizar_legcoins(legcoins, 500, "+")
+print(f"Seu novo saldo é: {legcoins} legcoins")
+    
