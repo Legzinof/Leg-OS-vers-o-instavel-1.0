@@ -27,7 +27,7 @@ print("                                        ")
 print("                                        ")
 print("                                        ")
 print("                                        ")
-#registro do usuário 
+#registro do usuári 
 print("vamos fazer seu cadastro ")
 usuário=input("digite seu nome:")
 idade=(input("digite sua idade:"))
